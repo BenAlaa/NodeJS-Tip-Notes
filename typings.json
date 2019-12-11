@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "sequelize": "registry:dt/sequelize#4.0.0+20170322194850"
+  }
+}

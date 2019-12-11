@@ -1,0 +1,61 @@
+<!--head.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%= pageTitle %>
+    </title>
+
+
+
+    <!-----------------------------------------addproduct.ejs using the head.ejs part-->
+    <%-include('includes/head.ejs')%>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <%-include('includes/header.ejs')%>
+
+
+        <main>
+
+            <!--if statement-->
+
+            <% if(products.length > 0){ %>
+                <div class="grid">
+                    <% for (const item of products) { %>
+
+
+                        <article class="card product-item">
+                            <header class="card__header">
+                                <h1 class="product__title">
+                                    <%= item.name %>
+                                </h1>
+                            </header>
+                            <div class="card__image">
+                                <img src="https://media.gettyimages.com/photos/stack-of-books-picture-id157482029?s=612x612" alt="">
+                            </div>
+                            <div class="card__content">
+                                <h2 class="product__price">
+                                    <%= item.price %>
+                                </h2>
+                                <p class="product__description">
+                                    <%= item.seller %>
+                                </p>
+                            </div>
+                            <div class="card__actions">
+                                <button class="btn">Add to Cart</button>
+                            </div>
+                        </article>
+                        <%  }%>
+                </div>
+                <% } %>
+        </main>
+</body>
+
+</html>
